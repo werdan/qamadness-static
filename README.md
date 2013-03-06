@@ -1,0 +1,4 @@
+qamadness-static
+================
+
+QAMadness site
