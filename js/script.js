@@ -10,12 +10,24 @@ function getParameterByName(name)
     return decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function CheckSize(){
+	if ($(window).height() < $('#site-container').height()) {
+		$('#site-footer').css('position', 'relative');
+	} else {
+		$('#site-footer').css('position', 'fixed');
+	}
+}
 (function ($, window, document, undefined) {
 
-	$(document).ready(function(){	
+	$(document).ready(function(){
+		CheckSize();
 		if (getParameterByName("thanks")) {
 			alert("Thank you, we'll get back to you soon!");
 		}
+	});
+	
+	$(window).resize(function(){
+		CheckSize();
 	});
 	
 	$('input').live('focus', function(){
@@ -34,7 +46,5 @@ function getParameterByName(name)
 	$('.target, #we-support-content .item').live('click', function(){
 		$('input').eq(0).focus();
 	});
-		
-
-
+	
 })(jQuery, this, this.document);
