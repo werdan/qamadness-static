@@ -11,7 +11,7 @@ function getParameterByName(name)
 }
 
 function CheckSize(){
-	if ($(window).height() < $('#site-container').height()) {
+	if ($(window).height() < 655) {
 		$('#site-footer').css('position', 'relative');
 	} else {
 		$('#site-footer').css('position', 'fixed');
